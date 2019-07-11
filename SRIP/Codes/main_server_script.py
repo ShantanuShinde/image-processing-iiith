@@ -44,7 +44,7 @@ def apply_filter():
     elif img_num == 2:
         img = IMAGE[0:300, 300:600]
     elif img_num == 3:
-        img = IMAGE[600:900, 0:300]
+        img = IMAGE[0:300, 600:900]
     elif img_num == 4:
         img = IMAGE[300:600, 0:300]
     elif img_num == 5:
