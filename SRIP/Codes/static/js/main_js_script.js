@@ -1,5 +1,5 @@
 // Declared global variables
-var nextText, inputImage, outputImage, imageNum, nextPressed;
+var nextText, inputImage, outputImage, imageNum;
 
 init();
 
@@ -8,34 +8,25 @@ function init() {
     nextText = document.getElementById("nextText");
     inputImage = document.getElementById("inputImg");
     outputImage = document.getElementById("outputImg");
-    imageNum = document.getElementById("imgNum");
-    nextPressed = false;
+    imageNum = 0;
     initialNextText();
 }
 
-// Function called on clicking the next button. Displays the selected image as input image
-$("#imageSelected").bind('click', function () {
-    var imageInd = parseInt(imageNum.selectedIndex);
-    if (imageInd > 0) {
-        inputImage.src = "/static/Images/Mosaic" + imageInd.toString() + ".png";
-        nextPressed = true;
-        laterNextText();
-    } else {
-        alert("Select an image.");
-    }
+// Function called on clicking the Select Image button. It displays the enlarged mosaic to select an image from it.
+$("#selectImage").bind('click', function () {
+    document.getElementById("enlargedMosaic").style.display = "block";
 });
 
 // Function called on clicking the Run button. It the sends the information of the selected image, filter and window size and sends it to the server for processing
 $("#run").bind('click', function () {
-    if (nextPressed) {
-        var selectedImageNum = imageNum.options[imageNum.selectedIndex].value;
+    if (imageNum > 0) {
         var filterNum = $("input[name='filter']:checked")[0].value;
         var neighbourhoodNum = $("input[name='window']:checked")[0].value;
         $.ajax({
             type: "POST",
             url: $SCRIPT_ROOT + '/apply_filter',
             data: {
-                imageNumber: selectedImageNum,
+                imageNumber: imageNum,
                 filter: filterNum,
                 windowSize: neighbourhoodNum
             }
@@ -46,7 +37,7 @@ $("#run").bind('click', function () {
             processingInfo.style.border = "#2f4f4f solid 0.2em";
         });
     } else {
-        alert("Select an Image and press Next");
+        alert("Select an Image");
     }
 });
 
@@ -57,16 +48,10 @@ $("#reset").bind('click', function () {
     initialNextText();
     document.getElementsByName("filter")[0].checked = true;
     document.getElementsByName("window")[1].checked = true;
-    imageNum.options[0].selected = true;
     var processingInfo = document.getElementById("processingInfo");
     processingInfo.innerHTML = "";
     processingInfo.style.border = "none";
-    nextPressed = false;
-});
-
-// Function called on changing the selected image, before pressing next button
-$("#imgNum").bind('change', function () {
-    nextPressed = false;
+    imageNum = 0;
 });
 
 // Displaying enlarged mosaic on clicking the smaller mosaic image
@@ -85,9 +70,21 @@ window.onclick = function (event) {
     }
 }
 
+// Function called on clicking on a part of the mosaic. It displays the selected image as Input image
+function selectImage(imageNumber) {
+    imageNum = imageNumber;
+    inputImage.src = "/static/Images/Mosaic" + imageNum.toString() + ".png";
+    laterNextText();
+    document.getElementById("enlargedMosaic").style.display = "none";
+}
+
+$(function() {
+    $('#largeMosaic').maphilight();
+});
+
 // Change the text in the Next Text box
 function initialNextText() {
-    nextText.innerHTML = "Select one of the images from the mosaic using the dropdown at the bottom of the page and press the <b>Next</b> button to continue";
+    nextText.innerHTML = "Click on the <b>Select Image</b> button to select an image to process from the mosaic.";
 }
 function laterNextText() {
     nextText.innerHTML = "Select the appropriate parameters and click the <b>Run</b> button";
