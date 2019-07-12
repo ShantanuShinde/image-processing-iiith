@@ -15,8 +15,10 @@ from PIL import Image
 app = Flask(__name__, template_folder="html_template")
 app.config['CUSTOM_STATIC_PATH'] = "../Libraries"
 
+
 WINDOW_SIZES = [(3, 3), (5, 5), (7, 7)]
 IMAGE = cv2.imread("static/Images/Mosaic.png", 0)
+
 
 def triangle_kernel(kerlen):
     '''
@@ -27,12 +29,14 @@ def triangle_kernel(kerlen):
     kernel2d /= kernel2d.sum()
     return kernel2d
 
+
 def unsharp_mask(img, window_size):
     '''
     This function applies unsharp mask on the passed image with the given window size
     '''
     gaussian = cv2.GaussianBlur(img, window_size, 10.0)
     return cv2.addWeighted(img, 1.5, gaussian, -0.5, 0, img)
+
 
 def apply_filter():
     '''
@@ -72,6 +76,7 @@ def apply_filter():
         img = unsharp_mask(img, WINDOW_SIZES[win_size])
     return img
 
+
 @app.route('/apply_filter', methods=['GET', 'POST'])
 def button_pressed():
     '''
@@ -84,12 +89,14 @@ def button_pressed():
     base64_image = base64.b64encode(temp_file.getvalue())
     return base64_image
 
+
 @app.route('/Libraries/<path:filename>')
 def custom_static(filename):
     '''
     This function is to handle access of libraries in the HTML template
     '''
     return send_from_directory(app.config['CUSTOM_STATIC_PATH'], filename)
+
 
 @app.route('/')
 def render():

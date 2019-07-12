@@ -1,5 +1,8 @@
 // Declared global variables
-var nextText, inputImage, outputImage, imageNum;
+var nextText;
+var inputImage;
+var outputImage;
+var imageNum;
 
 init();
 

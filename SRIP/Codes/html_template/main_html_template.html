@@ -1,6 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
-<head>
+<head >
+    <meta charset="utf-8">
     <title>Virtual Lab of Image Processing</title>
     <script src="/Libraries/jquery-3.4.1/jquery-3.4.1.js"></script>
     <script src="/Libraries/jquery-3.4.1/jquery.maphilight.js"></script>
@@ -29,7 +31,7 @@
                     <div class="col-md-12" id="parameters">
                         <div class="row">
                             <div class="col-md-6" id="linearOperations">
-                                <h6>Linear Filtering</h3>
+                                <h6>Linear Filtering</h6>
                                     <ul>
                                         <li><label><input type="radio" name="filter" value="1"
                                                     checked="checked">Straight
@@ -42,7 +44,7 @@
 
                             </div>
                             <div class="col-md-4" id="neighbourhood">
-                                <h6>Size of Neighbourhood</h3>
+                                <h6>Size of Neighbourhood</h6>
                                     <ul>
                                         <li><label><input type="radio" name="window" value="1">3 x 3</label>
                                         </li>
@@ -54,7 +56,7 @@
                                     </ul>
                             </div>
                             <div class="col-md-12" id="nonLinearOperations">
-                                <h6>Non-Linear Operations</h3>
+                                <h6>Non-Linear Operations</h6>
                                     <ul>
                                         <li><label><input type="radio" name="filter" value="4">Median</label>
                                         </li>
@@ -69,17 +71,17 @@
             <div class="col-md-7">
                 <div class="row">
                     <div class="col-md-6" id="images">
-                        <img id="inputImg" src="/static/Images/blank.png"><br>
+                        <img id="inputImg" src="/static/Images/blank.png" alt="Input Image"><br>
                         Input Image
                     </div>
                     <div class="col-md-6">
-                        <img id="outputImg" src="/static/Images/blank.png"><br>
+                        <img id="outputImg" src="/static/Images/blank.png" alt="Output Image"><br>
                         Output Image
                     </div>
                     <div class="col-md-12">
                         <div class="row" id="mosaic">
                             <div class="col-md-5">
-                                <img src="/static/Images/Mosaic.png" id="mosaicImg">
+                                <img src="/static/Images/Mosaic.png" id="mosaicImg" alt="Mosaic">
                             </div>
                             <div class="col-md-7">
                                 <p id="mosaicDesc">Click on the mosaic to select an image to process.</p>
@@ -109,11 +111,18 @@
             </map>
         </div>
     </div>
-    <script type="text/javascript">
+    <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!" />
+        </a>
+    </p>
+    <script>
         $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
     </script>
 
-    <script type=text/javascript src="/static/js/main_js_script.js">
+    <script src="/static/js/main_js_script.js">
 
     </script>
 </body>
