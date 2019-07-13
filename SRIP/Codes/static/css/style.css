@@ -78,10 +78,6 @@ button {
     color: #ffffff;
 }
 
-#images {
-    margin-bottom: 3em;
-}
-
 #mosaic {
     margin: 0.7em;
     margin-right: 0.8em;
@@ -149,4 +145,26 @@ button {
 
 #mosaicDesc {
     margin: 4em 0.5em 0.5em 0.5em;
+}
+
+@media screen and (max-width: 1080px) and (min-width:870px) {
+    #inputImg, #outputImg {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:870px) and (min-width:768px) {
+    #inputImgDiv, #outputImgDiv {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #inputImgDiv, #outputImgDiv, #mosaicText, #mosaicDiv {
+        width: 50%;
+    }
+    #images {
+        order: -1;
+    }
 }
