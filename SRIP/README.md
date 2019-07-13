@@ -7,7 +7,7 @@ To ensure that all the libraries required for the experiment are installed, run 
 
 **For Linux/MacOS:**
 * Open the terminal inside the *SRIP* folder.
-* Run the command `$ source venv_linux/Scripts/activate` to activate the virtual enviroment.
+* Run the command `$ source venv_linux/bin/activate` to activate the virtual enviroment.
 * After work is done, run the command `$ deactivate` to deactive the virtual enviroment.
 
 **For Windows**
