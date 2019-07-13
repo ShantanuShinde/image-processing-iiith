@@ -7,12 +7,12 @@ To ensure that all the libraries required for the experiment are installed, run 
 
 **For Linux/MacOS:**
 * Open the terminal inside the *SRIP* folder.
-* Run the command `$ source venv/bin/activate` to activate the virtual enviroment.
+* Run the command `$ source venv_linux/Scripts/activate` to activate the virtual enviroment.
 * After work is done, run the command `$ deactivate` to deactive the virtual enviroment.
 
 **For Windows**
 * Open the command prompt/powershell inside the *SRIP* folder.
-* Run the command `> venv/bin/activate.ps1` to activate the virtual enviroment.
+* Run the command `> venv_windows/Scripts/activate` to activate the virtual enviroment.
 * After work is done, run the command `> deactivate` to deactive the virtual enviroment.
 
 **Note:** In Windows, running the command directly may give a Security Error. If that happens, execute the command `>  Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force` before executing the command.
