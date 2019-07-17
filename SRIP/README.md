@@ -17,6 +17,27 @@ To ensure that all the libraries required for the experiment are installed, run 
 
 **Note:** In Windows, running the command directly may give a Security Error. If that happens, execute the command `>  Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force` before executing the command.
 
+## Alternative: Without using the Virtual Enviroment:
+-----------------------------------------------------
+
+To run the experiment without using the virtual environment, follow these steps:
+
+**For Ubuntu:**
+* Open the terminal.
+* Install *pip* for python 3 using the command `sudo apt install python3-pip`, or if python 3 is default, then `sudo apt install python-pip`.
+* Inside the terminal, go to the *SRIP* folder or open a new terminal inside the *SRIP* folder.
+* Run the command `pip3 install -r requirements.txt`, or if python 3 is default, `pip install -r requirements.txt`. This will install all the required libraries.
+
+**For MacOS:**
+* Open the terminal.
+* Install *pip* for python 3 using the command `sudo easy_install pip3`.
+* Inside the terminal, go to the *SRIP* folder or open a new terminal inside the *SRIP* folder.
+* Run the command `pip3 install -r requirements.txt`. This will install all the required libraries.
+
+**For Windows:**
+* Install the latest version of Python 3 by downloading the installer from the official site: https://www.python.org/downloads/. While installing, be sure to check the option for adding the path of Python 3 to the environment variable.
+* Open the command prompt or powershell inside the SRIP folder. 
+* Run the command `pip install -r requirements.txt`. This will install all the required libraries.
 
 ## 2. Starting the server:
 --------------------------
