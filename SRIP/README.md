@@ -42,7 +42,7 @@ To run the experiment without using the virtual environment, follow these steps:
 ## 2. Starting the server:
 --------------------------
 
-* Go open the *Codes* folder inside the *SRIP* folder.
+* Open the *Codes* folder inside the *SRIP* folder.
 * Inside, there is a file named `main_server_script.py`. Open the terminal/cmd/powershell in the current folder and execute the command `python main_server_script.py`.
-* The server will start running and a link will appear. Copy this link and open it inside a web browser. The experiment will start running inside the browser.
-* After the work is done, press `Ctrl+C` to close the server.
+* The server will start running and a link will appear. Copy this link and open it inside a web browser or click on the link while holding down the `Ctrl` key on the keyboard. The experiment will start running inside the browser.
+* After the work is done, press `Ctrl+C` inside the terminal/cmd/powershell to close the server.
