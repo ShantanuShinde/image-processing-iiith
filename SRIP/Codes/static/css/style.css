@@ -14,8 +14,8 @@ body {
 }
 
 img {
-    width: 300px;
-    height: 300px;
+    width: 18.750em;
+    height: 18.750em;
     border: #0000ff solid 0.2em;
     margin: 0.5em;
     margin-left: 0;
@@ -28,9 +28,9 @@ input[type="radio"] {
 
 
 #images {
-   width:660px;
-   max-width: none;
-   flex: none;
+    width: 660px;
+    max-width: none;
+    flex: none;
 }
 
 h1 {
@@ -49,7 +49,7 @@ h1 {
     z-index: 1;
     box-shadow: 0 0.250em 0.500em 0 rgba(0, 0, 0, 0.6), 0 0.375em 1.250em 0 rgba(0, 0, 0, 0.19);
     color: #ffffff;
-    width: 500px;
+    width: 31.25em;
     margin-left: auto;
     margin-right: auto;
 }
@@ -98,8 +98,8 @@ button {
 }
 
 #mosaicImg {
-    width: 200px;
-    height: 200px;
+    width: 12.500em;
+    height: 12.500em;
     cursor: pointer;
 }
 
@@ -124,15 +124,15 @@ button {
     background-color: #fefefe;
     margin: 1% auto;
     border: 0.083em solid #888;
-    width: 900px;
-    height: 900px;
+    width: 56.250em;
+    height: 56.250em;
 }
 
 .close {
     position: absolute;
     z-index: 1;
     color: #aaa;
-    font-size: 28px;
+    font-size: 1.750em;
     font-weight: bold;
 }
 
@@ -144,8 +144,8 @@ button {
 }
 
 #largeMosaic {
-    width: 900px;
-    height: 900px;
+    width: 56.250em;
+    height: 56.250em;
     margin: 0;
     border: none;
 }
@@ -160,28 +160,29 @@ button {
 }
 
 @media screen and (min-width: 1080px) {
-    #leftContent > div {
-        width:100%;
+    #leftContent>div {
+        width: 100%;
     }
 }
 
-/*@media screen and (max-width: 1080px) and (min-width:870px) {
-    #inputImg, #outputImg {
-        width: 100%;
-    }
-}*/
-
 @media screen and (max-width:870px) and (min-width:768px) {
-    #inputImgDiv, #outputImgDiv {
+
+    #inputImgDiv,
+    #outputImgDiv {
         width: 100%;
         max-width: none;
     }
 }
 
 @media screen and (max-width:768px) {
-    #inputImgDiv, #outputImgDiv, #mosaicText, #mosaicDiv {
+
+    #inputImgDiv,
+    #outputImgDiv,
+    #mosaicText,
+    #mosaicDiv {
         width: 50%;
     }
+
     #images {
         order: -1;
     }
