@@ -15,10 +15,6 @@ function init() {
     initialNextText();
 }
 
-// Function called on clicking the Select Image button. It displays the enlarged mosaic to select an image from it.
-$("#selectImage").bind('click', function () {
-    document.getElementById("enlargedMosaic").style.display = "block";
-});
 
 // Function called on clicking the Run button. It the sends the information of the selected image, filter and window size and sends it to the server for processing
 $("#run").bind('click', function () {
@@ -57,38 +53,19 @@ $("#reset").bind('click', function () {
     imageNum = 0;
 });
 
-// Displaying enlarged mosaic on clicking the smaller mosaic image
-var modal = document.getElementById("enlargedMosaic");
-var btn = document.getElementById("mosaicImg");
-var closeButton = document.getElementsByClassName("close")[0];
-btn.onclick = function () {
-    modal.style.display = "block";
-}
-closeButton.onclick = function () {
-    modal.style.display = "none";
-}
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
 // Function called on clicking on a part of the mosaic. It displays the selected image as Input image
 function selectImage(imageNumber) {
     imageNum = imageNumber;
     inputImage.src = "/static/Images/Mosaic" + imageNum.toString() + ".png";
     laterNextText();
-    document.getElementById("enlargedMosaic").style.display = "none";
 }
-
-$(function() {
-    $('#largeMosaic').maphilight();
-});
 
 // Change the text in the Next Text box
 function initialNextText() {
-    nextText.innerHTML = "Click on the <b>Select Image</b> button to select an image to process from the mosaic.";
+    nextText.innerHTML = "Click on one of the images from the mosaic below to process on.";
 }
+
 function laterNextText() {
     nextText.innerHTML = "Select the appropriate parameters and click the <b>Run</b> button";
 }

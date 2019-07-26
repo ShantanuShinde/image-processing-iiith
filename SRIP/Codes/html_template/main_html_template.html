@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>Virtual Lab of Image Processing</title>
     <script src="/Libraries/jquery-3.4.1/jquery-3.4.1.js"></script>
-    <script src="/Libraries/jquery-3.4.1/jquery.maphilight.js"></script>
     <script src="/Libraries/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/Libraries/bootstrap-4.3.1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -13,7 +12,8 @@
 
 <body>
     <div id="heading">
-        <h1><small>Virtual Lab of Image Processing<br /></small>Neighbourhood Operations</h1>
+        <img id="logo" src="/static/Images/logo.png">
+        <h1>Virtual Lab of Image Processing<br /><small>Neighbourhood Operations</small></h1>
     </div>
     <div class="container-fluid" id="mainContent">
         <div class="row">
@@ -23,10 +23,42 @@
                         <p id="nextText">
                         </p>
                     </div>
-                    <div class="col-md-12">
-                        <button id="selectImage">Select Image</button>
-                        <button id="reset">Reset</button>
-                        <button id="run">Run</button>
+                    <div class="col-md-12" id="mosaicAndBtns">
+                        <div class="row">
+                            <div class="col-md-12" id="mosaicImgDiv">
+                                <div class="mosaicImg">
+                                    <img src="/static/Images/Mosaic1.png" onclick="selectImage(1)">
+                                </div>
+                                <div class="mosaicImg">
+                                    <img src="/static/Images/Mosaic2.png" onclick="selectImage(2)">
+                                </div>
+                                <div class="mosaicImg">
+                                    <img src="/static/Images/Mosaic3.png" onclick="selectImage(3)">
+                                </div>
+                                <div class="mosaicImg">
+                                    <img src="/static/Images/Mosaic4.png" onclick="selectImage(4)">
+                                </div>
+                                <div class="mosaicImg">
+                                    <img src="/static/Images/Mosaic5.png" onclick="selectImage(5)">
+                                </div>
+                                <div class="mosaicImg">
+                                    <img src="/static/Images/Mosaic6.png" onclick="selectImage(6)">
+                                </div>
+                                <div class="mosaicImg">
+                                    <img src="/static/Images/Mosaic7.png" onclick="selectImage(7)">
+                                </div>
+                                <div class="mosaicImg">
+                                    <img src="/static/Images/Mosaic8.png" onclick="selectImage(8)">
+                                </div>
+                                <div class="mosaicImg">
+                                    <img src="/static/Images/Mosaic9.png" onclick="selectImage(9)">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button id="reset">Reset</button>
+                                <button id="run">Run</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-12" id="parameters">
                         <div class="row">
@@ -40,7 +72,6 @@
                                     <li><label><input type="radio" name="filter" value="3">Gaussian
                                             filter</label></li>
                                 </ul>
-
                             </div>
                             <div class="col-md-4" id="neighbourhood">
                                 <h6>Size of Neighbourhood</h6>
@@ -78,38 +109,13 @@
                         Output Image
                     </div>
                     <div class="col-md-12" id="mosaic">
-                        <div class="row">
-                            <div class="col-md-5" id="mosaicDiv">
-                                <img src="/static/Images/Mosaic.png" id="mosaicImg" alt="Mosaic">
-                            </div>
-                            <div class="col-md-7" id="mosaicText">
-                                <p id="mosaicDesc">Click on the mosaic to select an image to process.</p>
-                                <p id="processingInfo"></p>
-                            </div>
-                        </div>
+                        <p id="processingInfo"></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="enlargedMosaic">
-        <div id="enlargedMosaicImg">
-            <span class="close">&times;</span>
-            <img src="/static/Images/Mosaic.png" id="largeMosaic" alt="Mosaic" usemap="#mosaicMap">
 
-            <map name="mosaicMap">
-                <area shape="rect" coords="0,0,300,300" onclick="selectImage(1)">
-                <area shape="rect" coords="300,0,600,300" onclick="selectImage(2)">
-                <area shape="rect" coords="600,0,900,300" onclick="selectImage(3)">
-                <area shape="rect" coords="0,300,300,600" onclick="selectImage(4)">
-                <area shape="rect" coords="300,300,600,600" onclick="selectImage(5)">
-                <area shape="rect" coords="600,300,900,600" onclick="selectImage(6)">
-                <area shape="rect" coords="0,600,300,900" onclick="selectImage(7)">
-                <area shape="rect" coords="300,600,600,900" onclick="selectImage(8)">
-                <area shape="rect" coords="600,600,900,900" onclick="selectImage(9)">
-            </map>
-        </div>
-    </div>
     <script>
         $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
     </script>
