@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Virtual Lab of Image Processing</title>
+    <script src="../Libraries/jquery-3.4.1/jquery-3.4.1.js"></script>
+    <script src="../Libraries/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../Libraries/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="heading">
+        <img id="logo" src="Images/logo.png">
+        <h1>Virtual Lab of Image Processing<br /><small>Distance and Connectivity</small></h1>
+    </div>
+    <div class="container-fluid" id="mainContent">
+        <div class="row">
+            <div class="col-sm-4" id="leftContent">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p id="nextText">
+                        </p>
+                    </div>
+                    <div class="col-md-12" id="Buttons">
+                        <button id="reset">Reset</button>
+                        <button id="run">Run</button>
+                    </div>
+                    <div class="col-md-12" id="parameters">
+                        <div class="row">
+                            <div class="col-md-6" id="linearOperations">
+                                <h6>Select the Task</h6>
+                                <ul>
+                                    <li><label><input type="radio" name="task" value="1" checked="checked">Measure distance between two points.</label></li>
+                                    <li><label><input type="radio" name="task" value="2">Create Isodistance plot.</label></li>
+                                    <li><label><input type="radio" name="task" value="3">Convert from binary to grayscale.</label></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4" id="neighbourhood">
+                                <h6>Select the type of Distance</h6>
+                                <ul>
+                                    <li><label><input type="radio" name="distance" value="1" checked="checked">City blocks</label>
+                                    </li>
+                                    <li><label><input type="radio" name="distance" value="2">Chessboard</label>
+                                    </li>
+                                    <li><label><input type="radio" name="distance" value="3">Euclidean</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12" id="nonLinearOperations">
+                                <h6>Check connectivity</h6>
+                                <ul>
+                                    <li><label><input type="radio" name="task" value="4">4 neighbour</label>
+                                    </li>
+                                    <li><label><input type="radio" name="task" value="5">8 neighbour</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7" id="images">
+                <div class="row">
+                    <div class="col-md-6" id="inputImgDiv">
+                        <img id="inputImg" src="Images/blank.png"  alt="Input Image">
+                    
+                        <img id="grid" src="Images/overlay.png" >
+                        <div id="gridPoints" onclick="clickedPoint(event)">
+                            <div id="start-point"></div>
+                            <div id="end-point"></div>
+                        </div>
+                        
+
+                    </div>
+                    <div class="col-md-6" id="outputImgDiv">
+                        <img id="outputImg" src="Images/blank.png" alt="Output Image">
+                        <div id="distanceResult">
+                            <h4></h4>
+                        </div>
+                    </div>
+                    <div id="processingInfo">
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main_js_script.js">
+
+    </script>
+</body>
+
+</html>
