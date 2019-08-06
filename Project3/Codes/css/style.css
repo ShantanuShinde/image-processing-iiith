@@ -159,8 +159,8 @@ button {
     left: 0;
 }
 #inputImg,
-#grid,
-#gridPoints,
+.grid,
+.gridPoints,
 #outputImg,
 #distanceResult {
     width: 100%;
@@ -171,8 +171,8 @@ button {
 }
 
 #inputImg,
-#grid,
-#gridPoints {
+.grid,
+.gridPoints {
     margin: 0;
 }
 
@@ -181,7 +181,15 @@ button {
     margin-left: 0.5em;
 }
 
-#grid, 
+#outputImgDiv .grid {
+    margin-left: 0.5em;
+}
+
+#outputImgDiv .gridPoints {
+    margin-left: 0.5em;
+}
+
+.grid, 
 #distanceResult {
     z-index: 10;
 }
@@ -197,13 +205,17 @@ button {
     margin-right: 0.7em;
 }
 
-#gridPoints {
+.gridPoints {
     z-index: 20;
 }
 
 #start-point {
     border: 0.188em solid #ffff00;
     position: absolute;
+}
+
+#slider {
+    margin: 0.6em auto 0 auto;
 }
 
 #end-point {

@@ -32,9 +32,9 @@
                             <div class="col-md-6" id="linearOperations">
                                 <h6>Select the Task</h6>
                                 <ul>
-                                    <li><label><input type="radio" name="task" value="1" checked="checked">Measure distance between two points.</label></li>
-                                    <li><label><input type="radio" name="task" value="2">Create Isodistance plot.</label></li>
-                                    <li><label><input type="radio" name="task" value="3">Convert from binary to grayscale.</label></li>
+                                    <li><label><input type="radio" name="task" value="1" checked="checked" onclick="dist(this)">Measure distance between two points.</label></li>
+                                    <li><label><input type="radio" name="task" value="2" onclick="isodistance(this)">Create Isodistance plot.</label></li>
+                                    <li><label><input type="radio" name="task" value="3" onclick="dist(this)">Convert from binary to grayscale.</label></li>
                                 </ul>
                             </div>
                             <div class="col-md-4" id="neighbourhood">
@@ -51,11 +51,16 @@
                             <div class="col-md-12" id="nonLinearOperations">
                                 <h6>Check connectivity</h6>
                                 <ul>
-                                    <li><label><input type="radio" name="task" value="4">4 neighbour</label>
+                                    <li><label><input type="radio" name="task" value="4" onclick="dist(this)">4 neighbour</label>
                                     </li>
-                                    <li><label><input type="radio" name="task" value="5">8 neighbour</label>
+                                    <li><label><input type="radio" name="task" value="5" onclick="dist(this)">8 neighbour</label>
                                     </li>
                                 </ul>
+                            </div>
+                            <div class="col-mid-12" id="slider">
+                                <input type="range" value="1" min="1" max="16" oninput="changeDistance(this.value)"
+                                    onchange="changeDistance(this.value)" />
+                                <p>1</p>
                             </div>
                         </div>
                     </div>
@@ -66,8 +71,8 @@
                     <div class="col-md-6" id="inputImgDiv">
                         <img id="inputImg" src="Images/blank.png"  alt="Input Image">
                     
-                        <img id="grid" src="Images/overlay.png" >
-                        <div id="gridPoints" onclick="clickedPoint(event)">
+                        <img class="grid" src="Images/overlay.png" >
+                        <div class="gridPoints" id="inpGridPts" onclick="clickedPoint(event)">
                             <div id="start-point"></div>
                             <div id="end-point"></div>
                         </div>
@@ -76,6 +81,8 @@
                     </div>
                     <div class="col-md-6" id="outputImgDiv">
                         <img id="outputImg" src="Images/blank.png" alt="Output Image">
+                        <img class="grid" src="Images/overlay.png" >
+                        <div class="gridPoints" id="outGridPts"></div>
                         <div id="distanceResult">
                             <h4></h4>
                         </div>
